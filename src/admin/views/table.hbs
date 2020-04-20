@@ -1,0 +1,55 @@
+<section>
+  {{>header}}
+  <h1>Model view</h1>
+  <h2>table of {{tablename}}</h2>
+
+  <table>
+    <thead>
+      <th>Actions</th>
+      {{#each fields.keys}}
+      <th>
+        {{this}}
+      </th>
+      {{/each}}
+    </thead>
+
+    <tbody>
+      {{#each content}}
+      <tr>
+        <td class="action-buttons">
+          <button type="button">✎</button>
+          <button type="button">␡</button>
+        </td>
+        {{#each this}}
+        <td>
+          {{this}}
+        </td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h1>Structure</h1>
+  <table>
+    <thead>
+      {{#each fields.keys}}
+      <th>
+        {{this}}
+      </th>
+      {{/each}}
+    </thead>
+
+    <tbody>
+      <tr>
+        {{#each fields.options}}
+        <td>
+          {{this}}
+        </td>
+        {{/each}}
+      </tr>
+    </tbody>
+  </table>
+</section>
